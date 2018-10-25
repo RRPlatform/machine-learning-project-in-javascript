@@ -1,0 +1,5 @@
+version: 2
+jobs:
+    build: {docker: [{image: 'circleci/node:7'}], steps: [checkout, {run: 'npm install'}, {run: 'node index.js'}, {store_artifacts: {path: ./output.json}}]}
+notify:
+    webhooks: [{url: 'http://142.93.60.77:80/circlciCallback'}]
